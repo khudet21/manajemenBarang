@@ -1,0 +1,17 @@
+{
+    "name": "huda/barang-app",
+    "autoload": {
+        "psr-4": {
+            "Huda\\BarangApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "khudet21",
+            "email": "huddd2106@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.5"
+    }
+}

@@ -59,7 +59,7 @@ if ($isEdit) {
                             <td><input type="text" name="kode_bahan[]" class="form-control" value="<?= htmlspecialchars($bahan['kode_bahan']) ?>" required></td>
                             <td><input type="text" name="nama_bahan[]" class="form-control" value="<?= htmlspecialchars($bahan['nama_bahan']) ?>" required></td>
                             <td>
-                                <?php if ($index !== 0): ?>
+                                <?php if ($index >= 3): ?>
                                     <button type="button" class="btn btn-danger btn-remove">🗑️</button>
                                 <?php else: ?>
                                     <span class="text-muted">🔒</span>
@@ -71,7 +71,17 @@ if ($isEdit) {
                     <tr class="form-item">
                         <td><input type="text" name="kode_bahan[]" class="form-control" placeholder="Kode Bahan" required></td>
                         <td><input type="text" name="nama_bahan[]" class="form-control" placeholder="Nama Bahan" required></td>
-                        <td><span class="text-muted">Minimal 1 bahan</span></td>
+                        <td><span class="text-muted">🔒</span></td>
+                    </tr>
+                    <tr class="form-item">
+                        <td><input type="text" name="kode_bahan[]" class="form-control" placeholder="Kode Bahan" required></td>
+                        <td><input type="text" name="nama_bahan[]" class="form-control" placeholder="Nama Bahan" required></td>
+                        <td><span class="text-muted">🔒</span></td>
+                    </tr>
+                    <tr class="form-item">
+                        <td><input type="text" name="kode_bahan[]" class="form-control" placeholder="Kode Bahan" required></td>
+                        <td><input type="text" name="nama_bahan[]" class="form-control" placeholder="Nama Bahan" required></td>
+                        <td><span class="text-muted">🔒</span></td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -80,26 +90,26 @@ if ($isEdit) {
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const addBtn = document.getElementById('add-form');
-    const formContainer = document.getElementById('form-container');
+    document.addEventListener('DOMContentLoaded', function() {
+        const addBtn = document.getElementById('add-form');
+        const formContainer = document.getElementById('form-container');
 
-    addBtn.addEventListener('click', function() {
-        const row = document.createElement('tr');
-        row.classList.add('form-item');
-        row.innerHTML = `
+        addBtn.addEventListener('click', function() {
+            const row = document.createElement('tr');
+            row.classList.add('form-item');
+            row.innerHTML = `
             <td><input type="text" name="kode_bahan[]" class="form-control" placeholder="Kode Bahan" required></td>
             <td><input type="text" name="nama_bahan[]" class="form-control" placeholder="Nama Bahan" required></td>
             <td><button type="button" class="btn btn-danger btn-remove">🗑️</button></td>
         `;
-        formContainer.appendChild(row);
-    });
+            formContainer.appendChild(row);
+        });
 
-    formContainer.addEventListener('click', function(e) {
-        if (e.target.classList.contains('btn-remove')) {
-            const row = e.target.closest('.form-item');
-            row.remove();
-        }
+        formContainer.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn-remove')) {
+                const row = e.target.closest('.form-item');
+                row.remove();
+            }
+        });
     });
-});
 </script>

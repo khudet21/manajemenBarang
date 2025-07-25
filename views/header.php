@@ -21,7 +21,7 @@
         }
 
         main {
-            flex: 1;
+            flex: 1;    
         }
     </style>
 </head>
@@ -29,7 +29,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container text-center">
+        <div class="container">
             <a class="navbar-brand" href="./index.php">📦 Manajemen Barang</a>
         </div>
     </nav>

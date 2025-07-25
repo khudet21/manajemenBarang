@@ -17,6 +17,29 @@
 - **Frontend:** Bootstrap 5  
 - **Library Eksternal:** PHPSpreadsheet (untuk import Excel)
 
+## ⚙️ Instalasi & Konfigurasi
+
+### 1. Clone repo ini
+    
+git clone https://github.com/username/manajemenBarang.git
+cd manajemenBarang
+
+### 2. Install dependency PHPSpreadsheet (jika vendor/ belum ada)
+
+composer require phpoffice/phpspreadsheet
+
+### 3. Import database MySQL
+
+db_barang.sql
+
+### 4. Edit konfigurasi database di config/db.php
+
+$conn = new mysqli("localhost", "root", "", "nama_database");
+
+### 5. Jalankan aplikasi via browser
+
+http://localhost/manajemenBarang/index.php
+
 ## 📁 Struktur Direktori
 
 ```
@@ -44,25 +67,4 @@ manajemenBarang/
 ├── .gitignore
 └── README.md # Dokumentasi proyek ini
 ```
-    ## ⚙️ Instalasi & Konfigurasi
-
-    ### 1. Clone repo ini
-    
-    git clone https://github.com/username/manajemenBarang.git
-    cd manajemenBarang
-
-    ### 2. Install dependency PHPSpreadsheet (jika vendor/ belum ada)
-
-    composer require phpoffice/phpspreadsheet
-
-    ### 3. Import database MySQL
-
-    db_barang.sql
-
-    ### 4. Edit konfigurasi database di config/db.php
-
-    $conn = new mysqli("localhost", "root", "", "nama_database");
-
-    ### 5. Jalankan aplikasi via browser
-
-    http://localhost/manajemenBarang/index.php
+   

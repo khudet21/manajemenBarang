@@ -19,52 +19,49 @@
 
 ## 📁 Struktur Direktori
 
-manajemenBarang/
-├── config/
-│ └── db.php # Koneksi database
-│
-├── control/ # Logic proses
-│ ├── add.php # Tambah barang
-│ ├── create.php # Simpan ke database
-│ ├── delete.php # Hapus barang
-│ └── import.php # Proses import Excel
-│
-├── vendor/ # Dependency Composer (PHPSpreadsheet)
-│
-├── views/ # Tampilan halaman
-│ ├── footer.php
-│ ├── form.php
-│ └── header.php
-│
-├── db_barang.sql # File SQL untuk struktur dan data awal
-├── index.php # Halaman utama (daftar barang)
-├── composer.json # File konfigurasi Composer
-├── composer.lock
-├── .gitignore
-└── README.md # Dokumentasi proyek ini
+- manajemenBarang/
+- ├── config/
+- │ └── db.php # Koneksi database
+- │
+- ├── control/ # Logic proses
+- │ ├── add.php # Tambah barang
+- │ ├── create.php # Simpan ke database
+- │ ├── delete.php # Hapus barang
+- │ └── import.php # Proses import Excel
+- │
+- ├── vendor/ # Dependency Composer (PHPSpreadsheet)
+- │
+- ├── views/ # Tampilan halaman
+- │ ├── footer.php
+- │ ├── form.php
+- │ └── header.php
+- │
+- ├── db_barang.sql # File SQL untuk struktur dan data awal
+- ├── index.php # Halaman utama (daftar barang)
+- ├── composer.json # File konfigurasi Composer
+- ├── composer.lock
+- ├── .gitignore
+- └── README.md # Dokumentasi proyek ini
 
+    ## ⚙️ Instalasi & Konfigurasi
 
-## ⚙️ Instalasi & Konfigurasi
+    ### 1. Clone repo ini
+    
+    git clone https://github.com/username/manajemenBarang.git
+    cd manajemenBarang
 
-### 1. Clone repo ini
+    ### 2. Install dependency PHPSpreadsheet (jika vendor/ belum ada)
 
-```bash
-git clone https://github.com/username/manajemenBarang.git
-cd manajemenBarang
+    composer require phpoffice/phpspreadsheet
 
-### 2. Install dependency PHPSpreadsheet (jika vendor/ belum ada)
+    ### 3. Import database MySQL
 
-```bash
-composer require phpoffice/phpspreadsheet
+    db_barang.sql
 
-### 3. Import database MySQL
+    ### 4. Edit konfigurasi database di config/db.php
 
-db_barang.sql
+    $conn = new mysqli("localhost", "root", "", "nama_database");
 
-### 4. Edit konfigurasi database di config/db.php
+    ### 5. Jalankan aplikasi via browser
 
-$conn = new mysqli("localhost", "root", "", "nama_database");
-
-### 5. Jalankan aplikasi via browser
-
-http://localhost/manajemenBarang/index.php
+    http://localhost/manajemenBarang/index.php
